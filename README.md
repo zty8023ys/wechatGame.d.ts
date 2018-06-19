@@ -15,6 +15,7 @@
 
     ```git
     git clone https://github.com/zty8023ys/wechatGame.d.ts.git
+    cd wechatGame.d.ts/
     lua wxgame.lua
     ```
 
