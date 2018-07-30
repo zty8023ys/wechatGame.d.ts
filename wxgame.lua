@@ -1,7 +1,4 @@
-local url = "https://developers.weixin.qq.com/minigame/dev/document/render/canvas/wx.createCanvas.html"
-local cmd = "curl "..url .. [[
-   | grep "chapter\ \ \"\ data-level" |  grep -Eo "\/[a-zA-Z0-9\.]{1,}\.html" | sed 's/\/\(.*\)\.html/\1/g' | sed '1 i\wx' | sort | uniq > tempfile
-]]
+local cmd = [[curl https://developers.weixin.qq.com/minigame/dev/document/render/canvas/wx.createCanvas.html| grep "chapter\"\ data-level" |  grep -Eo "\/[a-zA-Z0-9\.]{1,}\.html" | sed 's/\/\(.*\)\.html/\1/g' | sed '1 i\wx' | sort | uniq > tempfile]]
 os.execute(cmd)
 local file = io.open("tempfile","r")
 local sFind = string.find

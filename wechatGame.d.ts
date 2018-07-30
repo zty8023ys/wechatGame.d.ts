@@ -23,6 +23,11 @@ declare module DownloadTask {
     export function abort(...args);
     export function onProgressUpdate(...args);
 }
+declare module FeedbackButton {
+    export function destroy(...args);
+    export function hide(...args);
+    export function show(...args);
+}
 declare module FileSystemManager {
     export function access(...args);
     export function accessSync(...args);
@@ -52,6 +57,11 @@ declare module FileSystemManager {
     export function unzip(...args);
     export function writeFile(...args);
     export function writeFileSync(...args);
+}
+declare module GameClubButton {
+    export function destroy(...args);
+    export function hide(...args);
+    export function show(...args);
 }
 declare module getAccessToken {
 }
@@ -108,12 +118,19 @@ declare module onMemoryWarning {
 declare module OpenDataContext {
     export function postMessage(...args);
 }
+declare module OpenSettingButton {
+    export function destroy(...args);
+    export function hide(...args);
+    export function show(...args);
+}
 declare module Performance {
     export function now(...args);
 }
 declare module RecorderManager {
     export function onError(...args);
     export function onFrameRecorded(...args);
+    export function onInterruptionBegin(...args);
+    export function onInterruptionEnd(...args);
     export function onPause(...args);
     export function onResume(...args);
     export function onStart(...args);
@@ -174,6 +191,12 @@ declare module UserGameData {
 }
 declare module UserInfo {
 }
+declare module UserInfoButton {
+    export function destroy(...args);
+    export function hide(...args);
+    export function onTap(...args);
+    export function show(...args);
+}
 declare module Video {
     export function exitFullScreen(...args);
     export function offEnded(...args);
@@ -209,6 +232,7 @@ declare module wx {
     export function closeSocket(...args);
     export function connectSocket(...args);
     export function createBannerAd(...args);
+    export function createFeedbackButton(...args);
     export function createGameClubButton(...args);
     export function createImage(...args);
     export function createInnerAudioContext(...args);
@@ -255,6 +279,7 @@ declare module wx {
     export function loadFont(...args);
     export function loadSubpackage(...args);
     export function login(...args);
+    export function navigateToMiniProgram(...args);
     export function offAudioInterruptionBegin(...args);
     export function offAudioInterruptionEnd(...args);
     export function offDeviceOrientationChange(...args);
