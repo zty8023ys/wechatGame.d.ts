@@ -13,6 +13,12 @@ declare module BannerAd {
 }
 declare module cancelAnimationFrame {
 }
+declare module Canvas {
+    export function getContext(...args);
+    export function toDataURL(...args);
+    export function toTempFilePath(...args);
+    export function toTempFilePathSync(...args);
+}
 declare module clearInterval {
 }
 declare module clearTimeout {
@@ -142,6 +148,8 @@ declare module RecorderManager {
 }
 declare module removeUserStorage {
 }
+declare module RenderingContext {
+}
 declare module requestAnimationFrame {
 }
 declare module RequestTask {
@@ -216,6 +224,8 @@ declare module Video {
     export function requestFullScreen(...args);
     export function seek(...args);
     export function stop(...args);
+}
+declare module WebGLRenderingContext.wxBindCanvasTexture {
 }
 declare module Worker {
     export function onMessage(...args);
