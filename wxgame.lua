@@ -1,4 +1,4 @@
-local cmd = [[curl https://developers.weixin.qq.com/minigame/dev/document/render/canvas/wx.createCanvas.html| grep "chapter\"\ data-level" |  grep -Eo "\/[a-zA-Z0-9\.]{1,}\.html" | sed 's/\/\(.*\)\.html/\1/g' | sed '1 i\wx' | sort | uniq > tempfile]]
+local cmd = [[curl https://developers.weixin.qq.com/minigame/dev/api/| grep "chapter\"\ data-level" |  grep -Eo "\/[a-zA-Z0-9\.]{1,}\.html" | sed 's/\/\(.*\)\.html/\1/g' | sed '1 i\wx' | sort | uniq > tempfile]]
 os.execute(cmd)
 local file = io.open("tempfile","r")
 local sFind = string.find
@@ -7,6 +7,11 @@ local sSub = string.sub
 local tInsert = table.insert
 local result = { }
 local curClass,classTable,checkClassName,beginLen
+local nativeClass = {
+    console=true,
+    Worker=true,
+    Performance=true,
+}
 local function newClass(className)
     if (sLen(className) == 0) then return end
     curClass = className
@@ -28,10 +33,12 @@ end
 file:close()
 file = io.open("wechatGame.d.ts","w")
 for k ,v in ipairs(result) do
-    file:write("declare module "..v.className .. " {\n")
-    for _k,_v in ipairs(v.property) do
-        file:write("    export function ".. _v .."(...args);\n")
+    if (not nativeClass[v.className]) then
+        file:write("declare module "..v.className .. " {\n")
+        for _k,_v in ipairs(v.property) do
+            file:write("    export function ".. _v .."(...args);\n")
+        end
+        file:write("}\n")
     end
-    file:write("}\n")
 end
 file:close()

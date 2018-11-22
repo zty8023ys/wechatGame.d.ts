@@ -19,19 +19,30 @@ declare module Canvas {
     export function toTempFilePath(...args);
     export function toTempFilePathSync(...args);
 }
+declare module checkSessionKey {
+}
 declare module clearInterval {
 }
 declare module clearTimeout {
 }
-declare module code2accessToken {
+declare module code2Session {
+}
+declare module createActivityId {
+}
+declare module createWXAQRCode {
 }
 declare module DownloadTask {
     export function abort(...args);
+    export function offHeadersReceived(...args);
+    export function offProgressUpdate(...args);
+    export function onHeadersReceived(...args);
     export function onProgressUpdate(...args);
 }
 declare module FeedbackButton {
     export function destroy(...args);
     export function hide(...args);
+    export function offTap(...args);
+    export function onTap(...args);
     export function show(...args);
 }
 declare module FileSystemManager {
@@ -67,13 +78,17 @@ declare module FileSystemManager {
 declare module GameClubButton {
     export function destroy(...args);
     export function hide(...args);
+    export function offTap(...args);
+    export function onTap(...args);
     export function show(...args);
 }
 declare module getAccessToken {
 }
-declare module Image {
+declare module getWXACode {
 }
-declare module ImageFile {
+declare module getWXACodeUnlimit {
+}
+declare module Image {
 }
 declare module imgSecCheck {
 }
@@ -119,18 +134,15 @@ declare module midasPresent {
 }
 declare module msgSecCheck {
 }
-declare module onMemoryWarning {
-}
 declare module OpenDataContext {
     export function postMessage(...args);
 }
 declare module OpenSettingButton {
     export function destroy(...args);
     export function hide(...args);
+    export function offTap(...args);
+    export function onTap(...args);
     export function show(...args);
-}
-declare module Performance {
-    export function now(...args);
 }
 declare module RecorderManager {
     export function onError(...args);
@@ -154,6 +166,8 @@ declare module requestAnimationFrame {
 }
 declare module RequestTask {
     export function abort(...args);
+    export function offHeadersReceived(...args);
+    export function onHeadersReceived(...args);
 }
 declare module RewardedVideoAd {
     export function load(...args);
@@ -168,6 +182,8 @@ declare module RewardedVideoAd {
 declare module setInterval {
 }
 declare module setTimeout {
+}
+declare module setUpdatableMsg {
 }
 declare module setUserStorage {
 }
@@ -193,6 +209,9 @@ declare module UpdateManager {
 }
 declare module UploadTask {
     export function abort(...args);
+    export function offHeadersReceived(...args);
+    export function offProgressUpdate(...args);
+    export function onHeadersReceived(...args);
     export function onProgressUpdate(...args);
 }
 declare module UserGameData {
@@ -202,10 +221,12 @@ declare module UserInfo {
 declare module UserInfoButton {
     export function destroy(...args);
     export function hide(...args);
+    export function offTap(...args);
     export function onTap(...args);
     export function show(...args);
 }
 declare module Video {
+    export function destroy(...args);
     export function exitFullScreen(...args);
     export function offEnded(...args);
     export function offError(...args);
@@ -225,13 +246,6 @@ declare module Video {
     export function seek(...args);
     export function stop(...args);
 }
-declare module WebGLRenderingContext.wxBindCanvasTexture {
-}
-declare module Worker {
-    export function onMessage(...args);
-    export function postMessage(...args);
-    export function terminate(...args);
-}
 declare module wx {
     export function authorize(...args);
     export function checkIsUserAdvisedToRest(...args);
@@ -242,6 +256,7 @@ declare module wx {
     export function closeSocket(...args);
     export function connectSocket(...args);
     export function createBannerAd(...args);
+    export function createCanvas(...args);
     export function createFeedbackButton(...args);
     export function createGameClubButton(...args);
     export function createImage(...args);
@@ -309,12 +324,15 @@ declare module wx {
     export function onAudioInterruptionBegin(...args);
     export function onAudioInterruptionEnd(...args);
     export function onCompassChange(...args);
+    export function onDeviceMotionChange(...args);
     export function onDeviceOrientationChange(...args);
     export function onError(...args);
+    export function onGyroscopeChange(...args);
     export function onHide(...args);
     export function onKeyboardComplete(...args);
     export function onKeyboardConfirm(...args);
     export function onKeyboardInput(...args);
+    export function onMemoryWarning(...args);
     export function onMessage(...args);
     export function onNetworkStatusChange(...args);
     export function onShareAppMessage(...args);
@@ -340,6 +358,7 @@ declare module wx {
     export function sendSocketMessage(...args);
     export function setClipboardData(...args);
     export function setEnableDebug(...args);
+    export function setInnerAudioOption(...args);
     export function setKeepScreenOn(...args);
     export function setMenuStyle(...args);
     export function setPreferredFramesPerSecond(...args);
@@ -357,8 +376,12 @@ declare module wx {
     export function showToast(...args);
     export function startAccelerometer(...args);
     export function startCompass(...args);
+    export function startDeviceMotionListening(...args);
+    export function startGyroscope(...args);
     export function stopAccelerometer(...args);
     export function stopCompass(...args);
+    export function stopDeviceMotionListening(...args);
+    export function stopGyroscope(...args);
     export function triggerGC(...args);
     export function updateKeyboard(...args);
     export function updateShareMenu(...args);
